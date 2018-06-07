@@ -9,10 +9,6 @@ Concepts and algorithms:
 - Mark Sutton
 - Julia Sigwart (j.sigwart@qub.ac.uk)
 
-Packaging:
-- Russell Garwood (russell.garwood@gmail.com)
-- Alan R.T. Spencer (alan.spencer@imperial.ac.uk)
-
 ======
 
 Relevant references:
