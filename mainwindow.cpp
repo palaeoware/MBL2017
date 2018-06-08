@@ -23,7 +23,31 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     //setup Qt UI
+    setWindowIcon(QIcon ("://resources/icon.png"));
     ui->setupUi(this);
+
+    //RJG - Add a few buttons to toolbar
+    ui->mainToolBar->setIconSize(QSize(25,25));
+
+    startButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_play_button_green.png")), QString("Start"), this);
+    startButton->setEnabled(true);
+    ui->mainToolBar->addAction(startButton);ui->mainToolBar->addSeparator();
+    QObject::connect(startButton, SIGNAL(triggered()), this, SLOT(on_actionStart_triggered()));
+
+    stopButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_stop_button_red.png")), QString("Stop"), this);
+    stopButton->setEnabled(false);
+    ui->mainToolBar->addAction(stopButton);ui->mainToolBar->addSeparator();
+    QObject::connect(stopButton, SIGNAL(triggered()), this, SLOT(on_actionStop_triggered()));
+
+    //RJG - add spacer
+    QWidget* spacer = new QWidget();
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    ui->mainToolBar->addWidget(spacer);
+
+    aboutButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_about_button.png")), QString("About"), this);
+    ui->mainToolBar->addAction(aboutButton);
+    stopButton->setEnabled(true);
+    QObject::connect(aboutButton, SIGNAL (triggered()), this, SLOT (on_actionAbout_triggered()));
 
     //setup an action group to make tree export actions mutually exclusive
     alignmentGroup = new QActionGroup(this);
@@ -398,11 +422,15 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionStart_triggered()
 {
+    startButton->setEnabled(false);
+    stopButton->setEnabled(true);
     TheSim->run(this);
 }
 
 void MainWindow::on_actionStop_triggered()
 {
+    startButton->setEnabled(true);
+    stopButton->setEnabled(false);
     TheSim->stop();
 }
 

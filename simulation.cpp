@@ -83,7 +83,12 @@ void Simulation::run(MainWindow *mainwin)
     rcount=0;
     read65536numbers();
 
-    rpoint=0;
+    //RJG - Seed pseudorandom numbers
+    qsrand(QTime::currentTime().msec());
+
+    //RJG - Load randoms into program - get random
+    double d_rpoint = ((double)qrand()/(double)RAND_MAX)*65535;
+    rpoint=(int)d_rpoint;
 
     //do tweakers
     tweakers[0]=1;
@@ -426,7 +431,6 @@ void Simulation::read65536numbers()
             exit(0);
             }
     }
-
 
     if ((f.size()-rfilepoint)<65536*4) rfilepoint=qrand();
     f.seek(rfilepoint);

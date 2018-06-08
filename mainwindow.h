@@ -57,6 +57,7 @@ public:
     void log_identical_genomes(QString text);
     void do_with_matrix_trees(int iter, Lineage *rootlineage);
     int get_precise_leaf_count();
+
 public slots:
     void on_actionExit_triggered();
     void on_actionLogged_triggered();
@@ -64,6 +65,7 @@ public slots:
     void on_actionStop_triggered();
     void on_actionSet_Export_Folder_2_triggered();
     void on_actionChart_to_PDF_triggered();
+
 private slots:
     void on_action_UseFDT_triggered();
     void on_action_UseIDT_triggered();
@@ -72,7 +74,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-
+    QAction *startButton, *stopButton, *aboutButton;
     void setupGraphs();
     void addGraph(int index, QString colour, int treemode);
     QList<int> graphindices; //position is
