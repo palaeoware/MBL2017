@@ -26,3 +26,5 @@ HEADERS  += mainwindow.h \
     qcustomplot.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += resources.qrc
