@@ -309,7 +309,8 @@ void MainWindow::plotcounts(QList<QHash<int,int>*> *data, bool showtable)
     }
 
     ui->widget->xAxis->setRange(1, maxcount);
-    if (maxy>95) maxy=95;  ui->widget->yAxis->setRange(0, maxy+5);
+    if (maxy>95) maxy=95;
+    ui->widget->yAxis->setRange(0, maxy+5);
     ui->widget->legend->setVisible(true);
     ui->widget->setVisible(true);
     ui->widget->replot();
@@ -499,8 +500,8 @@ void MainWindow::do_trees(int mode, int iter, Lineage *rootlineage)
 
     QString extension=".tre";
     QString iters;
-    iters.sprintf("%06ld",iter);
-    if (ui->actionTNT_MrBayes->isChecked()) iters.sprintf("%06ld",iter-1);
+    iters.sprintf("%06d",iter);
+    if (ui->actionTNT_MrBayes->isChecked()) iters.sprintf("%06d",iter-1);
 
     if (ui->actionNewick->isChecked()) extension=".nwk";
     if (ui->actionPhyloXML->isChecked()) extension=".phyloxml";

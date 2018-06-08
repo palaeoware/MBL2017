@@ -241,7 +241,7 @@ QString Lineage::tntstring()
     {
         QString s;
         if (time_died==-1)
-            s.sprintf("%ld",id);
+            s.sprintf("%lld",id);
         return s;
     }
     else
@@ -300,9 +300,9 @@ QString Lineage::newickstring()
     {
         QString s;
         if (time_died==-1)
-            s.sprintf("g%ld_s%ld:%d",genusnumber,id,bl);
+            s.sprintf("g%lld_s%lld:%d",genusnumber,id,bl);
         else
-            s.sprintf("{g%ld_s%ld}:%d",genusnumber,id,bl);
+            s.sprintf("{g%lld_s%lld}:%d",genusnumber,id,bl);
         return s;
     }
     else
@@ -325,9 +325,9 @@ QString Lineage::xmlstring()
     {
         QString s;
         if (time_died==-1)
-            s.sprintf("<clade><name>g%ld_s%ld</name><branch_length>%d</branch_length></clade>\n",genusnumber,id,bl);
+            s.sprintf("<clade><name>g%lld_s%lld</name><branch_length>%d</branch_length></clade>\n",genusnumber,id,bl);
         else
-            s.sprintf("<clade><name>Ext_s%ld</name><branch_length>%d</branch_length></clade>\n",id,bl);
+            s.sprintf("<clade><name>Ext_s%lld</name><branch_length>%d</branch_length></clade>\n",id,bl);
         return s;
     }
     else
@@ -607,7 +607,7 @@ bool Lineage::RDT_check(quint64 currenttime)
         return true;
     else
     {
-        if ((int)(((double)(currenttime-time_split))/RDT_THRESHOLD)>=currenttime-time_created)
+        if ((quint64)(((double)(currenttime-time_split))/RDT_THRESHOLD)>=currenttime-time_created)
         {
             if (daughter_lineage_A->RDT_check(currenttime) && daughter_lineage_B->RDT_check(currenttime))
                 return true;
