@@ -406,19 +406,28 @@ void Simulation::read65536numbers()
     //read more random numbers from file
     int c[10];
     rfilepoint+=65536*4;
-#ifdef Q_OS_MAC  //should be outside package
-    QFile f("../../../randomnumbers.dat");
-#else //win32 or linux
-    QFile f("randomnumbers.dat");
-#endif
+
+    QFile f("://resources/randoms.dat");
+
     QFileInfo f2(f.fileName());
 
-    //qDebug()<<f2.absoluteFilePath();
+    //RJG - try and load from internal resources, and if that fails look for randomnumbers.dat in folder as in previous version of software
     if (f.open(QIODevice::ReadOnly)==false)
     {
-        QMessageBox::warning(mw,"No random numbers!","No random number file found - see readme file. This should be named 'randomnumbers.dat', and placed on path (in "+f2.absoluteFilePath()+"). MBL will now exit - please sort out this file and restart.");
-        exit(0);
+        #ifdef Q_OS_MAC  //should be outside package
+            f.setFileName("../../../randomnumbers.dat");
+        #else //win32 or linux
+            f.setFileName("randomnumbers.dat");
+        #endif
+
+        if (f.open(QIODevice::ReadOnly)==false)
+            {
+            QMessageBox::warning(mw,"No random numbers!","Program failed to load random numbers from internal resources. Please include a file called 'randomnumbers.dat' on path (in "+f2.absoluteFilePath()+"). MBL2017 will now exit - please sort out this file and restart.");
+            exit(0);
+            }
     }
+
+
     if ((f.size()-rfilepoint)<65536*4) rfilepoint=qrand();
     f.seek(rfilepoint);
     f.read((char *)(&(randoms[0])),65536*4);
