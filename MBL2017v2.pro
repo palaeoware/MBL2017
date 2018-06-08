@@ -23,7 +23,8 @@ HEADERS  += mainwindow.h \
     lineage.h \
     simulation.h \
     genus.h \
-    qcustomplot.h
+    qcustomplot.h \
+    version.h
 
 FORMS    += mainwindow.ui
 

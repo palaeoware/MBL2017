@@ -62,6 +62,8 @@ MainWindow::MainWindow(QWidget *parent) :
     gotsomedata=false;
 
     setupGraphs();
+
+    showMaximized();
 }
 
 MainWindow::~MainWindow()
