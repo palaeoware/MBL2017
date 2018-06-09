@@ -1,4 +1,5 @@
 # MBL2017
+## Phylogenetic tree and matrix simulation based on birth–death systems
 
 This package is distributed for review purposes only. Not for redistribution until publication. 
 
@@ -76,4 +77,10 @@ Version 2 adds a binary character evolution model, and some custom output functi
 New Tree Export Format: TNT/MrBayes. This generates trees (in NEXUS format) together with batch files for TNT and Mr Bayes.
 Settings: Precise leaf count. Set to 0 for 'normal' functionality. If not 0, a clade within each tree is selected that is of exactly this size. If one is not found, the tree is discarded.
 Mutate chance. The chance of each binary character 'flipping' each time step. By default this is 0.02.
+
+_____
+
+t:@palaeoware
+
+w:https://github.com/palaeoware
 
