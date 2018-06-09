@@ -41,11 +41,11 @@ ______
 
 ## 2. Installation
 
-MBL2017 requires the Qt library (www.qt.io). It has been tested with Qt versions 5.3 and 5.5, but should be compatible with all Qt version greater than 5.3. It has been tested only on Windows, but will in theory work on any Qt-capable system. To compile and run,  (a) install Qt, (b) open the .pro file MBL2017.pro in Qt Creator, (c) specify build kit, (d) ensure a randomnumbers.dat file exists in the build directory. This should contain a sequence of random bytes, and should be at least 65536 bytes in length. Suitable data can be downloaded from https://qrng.anu.edu.au/
+MBL2017 requires the [Qt library](www.qt.io). It has been tested with Qt versions 5.3, 5.5, and 5.10 but should be compatible with all Qt versions greater than 5.3. It has been tested on Windows and Ubuntu Linux, but will in theory work on any Qt-capable system. To compile and run,  (a) install Qt, (b) open the .pro file MBL2017.pro in Qt Creator, and (c) specify build kit. MBL2017 includes random numbers, but if these fail you will get a warning and should then place a randomnumbers.dat file in the build directory. This should contain a sequence of random bytes, and should be at least 65536 bytes in length. Suitable data can be downloaded from https://qrng.anu.edu.au/
 
-MBL2017 uses QCustomPlot (http://www.qcustomplot.com/) v 1.3.1 for visualisation - source code included in this package, see comments for license.
+MBL2017 uses [QCustomPlot](http://www.qcustomplot.com/) v 1.3.1 for visualisation - source code included in this package, see comments for license.
 
-MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell Garwood.
+MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell J. Garwood.
 
 ______
 
