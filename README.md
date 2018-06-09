@@ -10,7 +10,7 @@ Concepts and algorithms:
 - Julia Sigwart (j.sigwart@qub.ac.uk)
 
 ![alt text][logo]
-[logo]: resources/palaeoware_logo_square.png "Palaeoware logo"
+[logo]: ./resources/palaeoware_logo_square.png "Palaeoware logo"
 ______
 
 ## Relevant references:
