@@ -159,7 +159,7 @@ void Simulation::run(MainWindow *mainwin)
         actualiterations++;
         QString so;
         QTextStream sout(&so);
-        sout<<"Iteration "<<i<<" actualiterations "<<actualiterations<<" actualtreecount "<<actualtreecount;
+        sout<<"Iteration "<<i<<" actual iterations "<<actualiterations<<" actual tree count "<<actualtreecount;
         mw->logtext(so+"\n");
 
         dummy_parameter_lineage=0; //important - constructor will try to check it!
@@ -270,7 +270,7 @@ void Simulation::run(MainWindow *mainwin)
                         mw->logtext(QString("Found subtree with length %1\n").arg(preciseleafcountroot->count_alive()));
                     }
                 }
-                else  mw->logtext("COULD NOT findd a precise clade");
+                else  mw->logtext("COULD NOT find a precise clade\n\n");
 
             }
         }

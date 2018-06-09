@@ -1,7 +1,12 @@
 #include "mainwindow.h"
 #include "version.h"
+#include "darkstyletheme.h"
+
 #include <QApplication>
 #include <QSplashScreen>
+#include <QString>
+#include <QStyle>
+#include <QDesktopWidget>
 
 int main(int argc, char *argv[])
 {
@@ -11,12 +16,14 @@ int main(int argc, char *argv[])
    a.setQuitOnLastWindowClosed(true);
 
    //Style program with our dark style
-   //a.setStyle(new DarkStyleTheme);
+   a.setStyle(new DarkStyleTheme);
 
    QPixmap splashPixmap(":/palaeoware_logo_square.png");
    QSplashScreen splash(splashPixmap,Qt::WindowStaysOnTopHint);
    splash.show();
-   splash.showMessage("<font><b>" + QString(PRODUCTNAME) + "</b></font>",Qt::AlignHCenter,Qt::white);
+   QString version;
+   version.sprintf("%d.%d.%d",MAJORVERSION,MINORVERSION,PATCHVERSION);
+   splash.showMessage("<font><b>" + QString(PRODUCTNAME) + " - v" + version + "</b></font>",Qt::AlignHCenter,Qt::white);
    a.processEvents();
 
 

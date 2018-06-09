@@ -82,4 +82,6 @@ private:
     void outputproportionalTable(QString name, QList<int> *data, QList<int> *satdata);
 };
 
+extern MainWindow *MainWin;
+
 #endif // MAINWINDOW_H

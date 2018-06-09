@@ -17,15 +17,20 @@ SOURCES += main.cpp\
     lineage.cpp \
     simulation.cpp \
     genus.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    about.cpp \
+    darkstyletheme.cpp
 
 HEADERS  += mainwindow.h \
     lineage.h \
     simulation.h \
     genus.h \
     qcustomplot.h \
-    version.h
+    version.h \
+    about.h \
+    darkstyletheme.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    about.ui
 
 RESOURCES += resources.qrc

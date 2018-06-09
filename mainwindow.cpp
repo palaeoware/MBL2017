@@ -3,11 +3,15 @@
 #include "simulation.h"
 #include "lineage.h"
 #include "qcustomplot.h"
+#include "about.h"
+#include "version.h"
+
 #include <QHash>
 #include <QFileDialog>
 #include <QPen>
 #include <QMessageBox>
 
+MainWindow *MainWin;
 
 /////////////////////////////////////////////////////
 //MainWindow object - handle GUI and user actions
@@ -25,6 +29,10 @@ MainWindow::MainWindow(QWidget *parent) :
     //setup Qt UI
     setWindowIcon(QIcon ("://resources/icon.png"));
     ui->setupUi(this);
+    MainWin=this;
+    QString version;
+    version.sprintf("%d.%d.%d",MAJORVERSION,MINORVERSION,PATCHVERSION);
+    setWindowTitle(QString(PRODUCTNAME)+" v"+version+" - compiled - "+__DATE__);
 
     //RJG - Add a few buttons to toolbar
     ui->mainToolBar->setIconSize(QSize(25,25));
@@ -663,5 +671,6 @@ void MainWindow::on_action_UseRDT_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    QMessageBox::about(this,"About MBL2017 v2","MBL2017 v2 (with additions for character evolution). coding Mark Sutton, m.sutton@ic.ac.uk<br />Concepts and algorithms Mark Sutton, Julia Sigwart.");
+    About adialogue;
+    adialogue.exec();
 }
