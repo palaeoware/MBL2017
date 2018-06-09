@@ -8,6 +8,9 @@ Coded by:
 Concepts and algorithms:
 - Mark Sutton
 - Julia Sigwart (j.sigwart@qub.ac.uk)
+
+![alt text][logo]
+[logo]: resources/palaeoware_logo_square.png "Palaeoware logo"
 ______
 
 ## Relevant references:
@@ -25,7 +28,7 @@ ______
 
 ## 2. Usage
 
-### v1
+### Version 1
 
 To initiate an MBL run, change parameters in GUI then use Start from the file menu. A simulation can be stopped prematurely using Stop. Use 'Chart to PDF' from the file menu to generate a PDF version of the onscreen chart.
 
@@ -63,7 +66,7 @@ Continue until correct number of trees. In this mode, the program will continue 
 
 Output results per tree - if this is checked the program operates in verbose mode, logging the size of each tree found (and more besides).
 
-### v2
+### Version 2
 
 Version 2 adds a binary character evolution model, and some custom output functions to produce batch TNT and Mr Bayes files for a particular phylogeny testing exercise. New GUI elements are:
 
