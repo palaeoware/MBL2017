@@ -21,6 +21,8 @@ MBL2017 requires the Qt library (www.qt.io). It has been tested with Qt versions
 
 MBL2017 uses QCustomPlot (http://www.qcustomplot.com/) v 1.3.1 for visualisation - source code included in this package, see comments for license.
 
+MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell Garwood.
+
 2. Usage
 
 ##v1
