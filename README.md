@@ -1,5 +1,6 @@
 # MBL2017
 
+This package is distributed for review purposes only. Not for redistribution until publication. 
 
 Coded by:
  - Mark Sutton (m.sutton@imperial.ac.uk)
@@ -13,24 +14,22 @@ ______
 Sigwart, J.D., Sutton, M.D. and Bennett, K.D., 2017. How big is a genus? Towards a nomothetic systematics. Zoological Journal of the Linnean Society.
 ______
 
-This package is distributed for review purposes only. Not for redistribution until publication. 
-
-1. Installation
+## 1. Installation
 
 MBL2017 requires the Qt library (www.qt.io). It has been tested with Qt versions 5.3 and 5.5, but should be compatible with all Qt version greater than 5.3. It has been tested only on Windows, but will in theory work on any Qt-capable system. To compile and run,  (a) install Qt, (b) open the .pro file MBL2017.pro in Qt Creator, (c) specify build kit, (d) ensure a randomnumbers.dat file exists in the build directory. This should contain a sequence of random bytes, and should be at least 65536 bytes in length. Suitable data can be downloaded from https://qrng.anu.edu.au/
 
 MBL2017 uses QCustomPlot (http://www.qcustomplot.com/) v 1.3.1 for visualisation - source code included in this package, see comments for license.
 
 MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell Garwood.
-
-2. Usage
-
-## v1
 ______
+
+## 2. Usage
+
+### v1
 
 To initiate an MBL run, change parameters in GUI then use Start from the file menu. A simulation can be stopped prematurely using Stop. Use 'Chart to PDF' from the file menu to generate a PDF version of the onscreen chart.
 
-### Main parameters (always visible in main window)
+#### Main parameters (always visible in main window)
 
 Extinction probability: the probability of a lineage going extinct in a time increment (0=never, 1=always)
 
@@ -46,11 +45,11 @@ Trees to run - how many separate MBL trees to simulate
 
 Filename stub - if tree files are output (see below), the program prepends any text in this box to their name
 
-### Tree Export Menu
+#### Tree Export Menu
 
 Tick any of the three export items to have MBL2017 generate a tree file with the selected taxonomy for each tree it successfully generates. The tree format is selected in this menu as well. More than one tree type can be exported at once, but only a single format can be selected. Tree export will only take place if an output folder has been chosen with the final item on this menu
 
-### Mode menu
+#### Mode menu
 
 Contains checkable menu-items to control the behaviour of the program.
 
@@ -64,8 +63,7 @@ Continue until correct number of trees. In this mode, the program will continue 
 
 Output results per tree - if this is checked the program operates in verbose mode, logging the size of each tree found (and more besides).
 
-## v2
-______
+### v2
 
 Version 2 adds a binary character evolution model, and some custom output functions to produce batch TNT and Mr Bayes files for a particular phylogeny testing exercise. New GUI elements are:
 
