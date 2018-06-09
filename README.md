@@ -9,9 +9,12 @@ Concepts and algorithms:
 - Mark Sutton
 - Julia Sigwart (j.sigwart@qub.ac.uk)
 
+<p align="center">
 ![alt text][logo]
 
 [logo]: ./resources/palaeoware_logo_square.png "Palaeoware logo"
+</p>
+
 ______
 
 ## Relevant references:
