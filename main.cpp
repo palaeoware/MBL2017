@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
    splash.showMessage("<font><b>" + QString(PRODUCTNAME) + " - v" + version + "</b></font>",Qt::AlignHCenter,Qt::white);
    a.processEvents();
 
-
     MainWindow w;
     w.show();
 
