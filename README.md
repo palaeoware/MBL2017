@@ -9,7 +9,7 @@ Concepts and algorithms:
 - Julia Sigwart (j.sigwart@qub.ac.uk)
 ______
 
-##Relevant references:
+## Relevant references:
 Sigwart, J.D., Sutton, M.D. and Bennett, K.D., 2017. How big is a genus? Towards a nomothetic systematics. Zoological Journal of the Linnean Society.
 ______
 
@@ -25,12 +25,12 @@ MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russe
 
 2. Usage
 
-##v1
+## v1
 ______
 
 To initiate an MBL run, change parameters in GUI then use Start from the file menu. A simulation can be stopped prematurely using Stop. Use 'Chart to PDF' from the file menu to generate a PDF version of the onscreen chart.
 
-###Main parameters (always visible in main window)
+### Main parameters (always visible in main window)
 
 Extinction probability: the probability of a lineage going extinct in a time increment (0=never, 1=always)
 
@@ -46,11 +46,11 @@ Trees to run - how many separate MBL trees to simulate
 
 Filename stub - if tree files are output (see below), the program prepends any text in this box to their name
 
-###Tree Export Menu
+### Tree Export Menu
 
 Tick any of the three export items to have MBL2017 generate a tree file with the selected taxonomy for each tree it successfully generates. The tree format is selected in this menu as well. More than one tree type can be exported at once, but only a single format can be selected. Tree export will only take place if an output folder has been chosen with the final item on this menu
 
-###Mode menu
+### Mode menu
 
 Contains checkable menu-items to control the behaviour of the program.
 
@@ -64,7 +64,7 @@ Continue until correct number of trees. In this mode, the program will continue 
 
 Output results per tree - if this is checked the program operates in verbose mode, logging the size of each tree found (and more besides).
 
-##v2
+## v2
 ______
 
 Version 2 adds a binary character evolution model, and some custom output functions to produce batch TNT and Mr Bayes files for a particular phylogeny testing exercise. New GUI elements are:
