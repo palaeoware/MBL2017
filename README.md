@@ -19,18 +19,37 @@ ______
 
 ## Relevant references:
 Sigwart, J.D., Sutton, M.D. and Bennett, K.D., 2017. How big is a genus? Towards a nomothetic systematics. Zoological Journal of the Linnean Society.
+
+_____
+
+## Contents:
+
+1. Copyright and Licence
+2. Installation
+3. Usage
+
 ______
 
-## 1. Installation
+## 1. Copyright and Licence
+
+All MBL2017 code is released under the GNU General Public License. See LICENSE.md files in the programme directory.
+
+All MBL2017 code is Copyright 2018 by Mark D. Sutton and Julia Sigwart.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+______
+
+## 2. Installation
 
 MBL2017 requires the Qt library (www.qt.io). It has been tested with Qt versions 5.3 and 5.5, but should be compatible with all Qt version greater than 5.3. It has been tested only on Windows, but will in theory work on any Qt-capable system. To compile and run,  (a) install Qt, (b) open the .pro file MBL2017.pro in Qt Creator, (c) specify build kit, (d) ensure a randomnumbers.dat file exists in the build directory. This should contain a sequence of random bytes, and should be at least 65536 bytes in length. Suitable data can be downloaded from https://qrng.anu.edu.au/
 
 MBL2017 uses QCustomPlot (http://www.qcustomplot.com/) v 1.3.1 for visualisation - source code included in this package, see comments for license.
 
 MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell Garwood.
+
 ______
 
-## 2. Usage
+## 3. Usage
 
 ### Version 1
 
