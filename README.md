@@ -37,7 +37,7 @@ All MBL2017 code is released under the GNU General Public License. See LICENSE.m
 
 All MBL2017 code is Copyright 2018 by Mark D. Sutton and Julia Sigwart.
 
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but **without any warranty**.
 ______
 
 ## 2. Installation
@@ -51,6 +51,8 @@ MBL2017 uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russe
 ______
 
 ## 3. Usage
+
+Descriptions of the algorithms used in this package are included in the references above. 
 
 ### Version 1
 
