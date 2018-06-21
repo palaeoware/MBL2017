@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>641</width>
+    <width>647</width>
     <height>571</height>
    </rect>
   </property>
@@ -282,6 +282,13 @@
          </property>
         </spacer>
        </item>
+       <item row="4" column="5" colspan="2">
+        <widget class="QPushButton" name="reseed_randoms">
+         <property name="text">
+          <string>Reseed randoms from zero</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -331,7 +338,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>641</width>
+     <width>647</width>
      <height>22</height>
     </rect>
    </property>
