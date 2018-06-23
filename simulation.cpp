@@ -154,13 +154,15 @@ void Simulation::run(MainWindow *mainwin)
 
     if (preciseleafcount) mw->log_identical_genomes("tree,identical_genomes");
 
+    mw->logtext("\n*************************\nStarting simulation\n\n");
+
     //main loop - iterate for specified number of trees
     for (int i=0; i<generations; i++)
     {
         actualiterations++;
         QString so;
         QTextStream sout(&so);
-        sout<<"Iteration "<<i<<" actual iterations "<<actualiterations<<" actual tree count "<<actualtreecount;
+        sout<<"Iteration "<<i<<". Actual iterations "<<actualiterations<<". Actual tree count "<<actualtreecount;
         mw->logtext(so+"\n");
 
         dummy_parameter_lineage=0; //important - constructor will try to check it!
@@ -650,6 +652,7 @@ int Simulation::distancebetween(quint32 chars1[], quint32 chars2[])
 void Simulation::stop()
 {
     stopflag=true; //triggers a stop at end of current tree
+    mw->logtext("\n*************************\nSimulation stopped\n\n");
 }
 
 

@@ -619,7 +619,7 @@ bool MainWindow::getTableFileNeeded()
 
 bool MainWindow::getReseedMode()
 {
-    return ui->reseed_randoms->isChecked();
+return ui->reseedComboBox->currentIndex();
 }
 
 QString MainWindow::getCombinedTablesFileName()
