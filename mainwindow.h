@@ -50,6 +50,7 @@ public:
     bool getTaxonomyTypeInUse(int mode);
     void proportionaltables(QList<QList<int> *> *data, QList<QList<int> *> *satdata);
     bool getTableFileNeeded();
+    bool getReseedMode();
     QString getCombinedTablesFileName();
 
     QList<QStringList> csvdata,csvdatabins;

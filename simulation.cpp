@@ -89,6 +89,7 @@ void Simulation::run(MainWindow *mainwin)
     //RJG - Load randoms into program - get random
     double d_rpoint = ((double)qrand()/(double)RAND_MAX)*65535;
     rpoint=(int)d_rpoint;
+    if (mw->getReseedMode())rpoint=0;
 
     //do tweakers
     tweakers[0]=1;

@@ -47,9 +47,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mainToolBar->addAction(stopButton);ui->mainToolBar->addSeparator();
     QObject::connect(stopButton, SIGNAL(triggered()), this, SLOT(on_actionStop_triggered()));
 
-    //Connect reseed button
-    QObject::connect(ui->reseed_randoms, SIGNAL(triggered()), this, SLOT(reseed_randoms));
-
     //RJG - add spacer
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -618,6 +615,11 @@ int MainWindow::get_precise_leaf_count()
 bool MainWindow::getTableFileNeeded()
 {
     return ui->actionCombine_Tables_into_File->isChecked();
+}
+
+bool MainWindow::getReseedMode()
+{
+    return ui->reseed_randoms->isChecked();
 }
 
 QString MainWindow::getCombinedTablesFileName()
