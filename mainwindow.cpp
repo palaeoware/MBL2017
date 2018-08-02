@@ -47,10 +47,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mainToolBar->addAction(stopButton);ui->mainToolBar->addSeparator();
     QObject::connect(stopButton, SIGNAL(triggered()), this, SLOT(on_actionStop_triggered()));
 
-    //RJG - add spacer
-    QWidget* spacer = new QWidget();
-    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    ui->mainToolBar->addWidget(spacer);
+    ui->mainToolBar->addSeparator();
+    QLabel *spath = new QLabel("Save path: ", this);
+    ui->mainToolBar->addWidget(spath);
+    QString program_path(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
+    program_path.append("/");
+    QLineEdit *path = new QLineEdit(program_path,this);
+    TheSim->filepath=path->text();
+    ui->mainToolBar->addWidget(path);
+
+    //Spacer
+    QWidget* empty = new QWidget();
+    empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    empty->setMaximumWidth(10);
+    empty->setMaximumHeight(5);
+    ui->mainToolBar->addWidget(empty);
+    QPushButton *cpath = new QPushButton("&Change", this);
+    ui->mainToolBar->addWidget(cpath);
+    connect(cpath, SIGNAL (clicked()), this, SLOT (on_actionSet_Export_Folder_2_triggered()));
 
     aboutButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_about_button.png")), QString("About"), this);
     ui->mainToolBar->addAction(aboutButton);

@@ -1,8 +1,11 @@
 #ifndef ABOUT_H
 #define ABOUT_H
 
-#include <QDialog>
 #include "mainwindow.h"
+
+#include <QDialog>
+#include<QPushButton>
+#include<QDesktopServices>
 
 namespace Ui {
 class About;
@@ -19,6 +22,10 @@ public:
 private:
     Ui::About *ui;
     QString returnLicense();
+
+private slots:
+    void codeOnGitHub();
+     void bugReport();
 };
 
 #endif // ABOUT_H

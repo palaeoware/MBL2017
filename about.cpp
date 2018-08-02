@@ -26,10 +26,17 @@ About::About(QWidget *parent) :
                          "<br><br>Concepts and algorithms:"
                          "<br><br><b>Mark Sutton</b>"
                          "<br><b>Julia Sigwart</b>(j.sigwart@qub.ac.uk)"
-                         "<br><br>It uses a GUI theme designed by Alan R.T. Spencer, and implemented by Russell Garwood."
+                         "<br><br>It uses a GUI theme designed by Alan R.T. Spencer. Tinkering and GUI implementation by Russell J. Garwood."
                          "<br><br>Reports are appreciated, and comments, suggestions, and feature requests are welcome.");
       ui->textLabel_2->setAlignment(Qt::AlignCenter);
 
+      QPushButton *codePushButton = new  QPushButton("&Code on GitHub",this);
+      ui->pushButtonHorizontalLayout->addWidget(codePushButton);
+      connect(codePushButton , SIGNAL (clicked()), this, SLOT(codeOnGitHub()));
+
+     QPushButton *bugPushButton = new  QPushButton("&Report Bug/Issue/Feature Request",this);
+      ui->pushButtonHorizontalLayout->addWidget(bugPushButton);
+     connect(bugPushButton , SIGNAL (clicked()), this, SLOT(bugReport()));
 
       ui->textLabel_3->setWordWrap(true);
       ui->textLabel_3->setText("<b>Copyright and License:</b>"
@@ -50,6 +57,16 @@ About::About(QWidget *parent) :
       ui->footer2->setAlignment(Qt::AlignCenter);
 
       ui->buttonBox->setStandardButtons(QDialogButtonBox::Close);
+}
+
+void About::codeOnGitHub()
+{
+    QDesktopServices::openUrl(QUrl(QString(GITURL) + QString(GITREPOSITORY)));
+}
+
+void About::bugReport()
+{
+    QDesktopServices::openUrl(QUrl(QString(GITURL) + QString(GITREPOSITORY) + QString(GITISSUE)));
 }
 
 About::~About()

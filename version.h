@@ -12,10 +12,13 @@
 
 //Programme Name
 #define PRODUCTNAME "MBL2017"
-//#define PRODUCTTAG "The [Tr]ee [Evo]lutionary [Sim]ulator "
 
 //Github
-#define GITHUB_URL "https://github.com/palaeoware"
-//#define GITREPOSITORY "palaeoware/trevosim"
+#define GITURL "https://github.com/"
+#define GITREPOSITORY "palaeoware/MBL2017"
+#define GITISSUE "/issues"
+
+//Email
+#define EMAIL "palaeoware@gmail.com"
 
 #endif // VERSION_H
