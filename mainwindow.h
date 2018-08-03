@@ -2,12 +2,15 @@
 #define MAINWINDOW_H
 
 class Lineage;
+
 #include <QMainWindow>
 #include <QHash>
 #include <QActionGroup>
 #include <QList>
 #include <QVector>
 #include <QStringList>
+#include <QLineEdit>
+
 #include "simulation.h"
 namespace Ui {
 class MainWindow;
@@ -72,10 +75,12 @@ private slots:
     void on_action_UseIDT_triggered();
     void on_action_UseRDT_triggered();
     void on_actionAbout_triggered();
+    void updateExportFolderFromUI();
 
 private:
     Ui::MainWindow *ui;
     QAction *startButton, *stopButton, *aboutButton;
+    QLineEdit *path;
     void setupGraphs();
     void addGraph(int index, QString colour, int treemode);
     QList<int> graphindices; //position is

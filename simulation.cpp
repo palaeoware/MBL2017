@@ -53,7 +53,6 @@ Simulation::Simulation()
     rootspecies=0;
     crownroot=0;
     TheSimGlobal=this;
-    filepath="c:/";  //CHANGE THIS FOR NON-WINDOWS SYSTEMS!
 
     //set up list of data arrays - one for each possible type and a dummy for 0 (unclassified)
     for (int i=0; i<=TREE_MODE_MAX; i++) counts.append(new QHash<int,int>);

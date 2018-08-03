@@ -44,19 +44,27 @@ MainWindow::MainWindow(QWidget *parent) :
 
     stopButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_stop_button_red.png")), QString("Stop"), this);
     stopButton->setEnabled(false);
-    ui->mainToolBar->addAction(stopButton);ui->mainToolBar->addSeparator();
+    ui->mainToolBar->addAction(stopButton);
+    ui->mainToolBar->addSeparator();
     QObject::connect(stopButton, SIGNAL(triggered()), this, SLOT(on_actionStop_triggered()));
 
-    ui->mainToolBar->addSeparator();
+    // RJG - Spacer
+    QWidget* empty2 = new QWidget();
+    empty2->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    empty2->setMaximumWidth(10);
+    empty2->setMaximumHeight(5);
+    ui->mainToolBar->addWidget(empty2);
+
+    //RJG - Savepath
     QLabel *spath = new QLabel("Save path: ", this);
     ui->mainToolBar->addWidget(spath);
-    QString program_path(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
-    program_path.append("/");
-    QLineEdit *path = new QLineEdit(program_path,this);
-    TheSim->filepath=path->text();
+    QString desktop_path(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
+    desktop_path.append("/MBL2017_output/");
+    path = new QLineEdit (desktop_path,this);
+    connect(path, SIGNAL(textChanged(const QString &)), this, SLOT(updateExportFolderFromUI()));
     ui->mainToolBar->addWidget(path);
 
-    //Spacer
+    // RJG - Spacer
     QWidget* empty = new QWidget();
     empty->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
     empty->setMaximumWidth(10);
@@ -65,6 +73,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QPushButton *cpath = new QPushButton("&Change", this);
     ui->mainToolBar->addWidget(cpath);
     connect(cpath, SIGNAL (clicked()), this, SLOT (on_actionSet_Export_Folder_2_triggered()));
+
+    ui->mainToolBar->addSeparator();
 
     aboutButton = new QAction(QIcon(QPixmap(":/darkstyle/icon_about_button.png")), QString("About"), this);
     ui->mainToolBar->addAction(aboutButton);
@@ -79,9 +89,11 @@ MainWindow::MainWindow(QWidget *parent) :
     alignmentGroup->addAction(ui->actionTNT_MrBayes);
     ui->actionNewick->setChecked(true);
 
-    //create a simulation opject
+    //create a simulation object
     TheSim=new Simulation;
     gotsomedata=false;
+    //RJG - Save location on start
+    TheSim->filepath=path->text();
 
     setupGraphs();
 
@@ -474,7 +486,17 @@ void MainWindow::on_actionChart_to_PDF_triggered()
 void MainWindow::on_actionSet_Export_Folder_2_triggered()
 {
    QString d = QFileDialog::getExistingDirectory(this,"Folder for output");
-   if (d!="") TheSim->filepath=d;
+   if (d!="") {
+                    if(!d.endsWith("MBL2017_output/"))d.append("/MBL2017_output/");
+                    TheSim->filepath=d;
+                    path->setText(d);
+                }
+}
+
+
+void MainWindow::updateExportFolderFromUI()
+{
+   TheSim->filepath=path->text();
 }
 
 
