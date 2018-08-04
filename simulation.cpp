@@ -12,6 +12,7 @@
 #include "genus.h"
 #include "math.h"
 #include <QMessageBox>
+#include <QDir>
 
 /////////////////////////////////////////////////////
 //Simulation class - single-instance class to manage simulation
@@ -89,6 +90,12 @@ void Simulation::run(MainWindow *mainwin)
     double d_rpoint = ((double)qrand()/(double)RAND_MAX)*65535;
     rpoint=(int)d_rpoint;
     if (mw->getReseedMode())rpoint=0;
+
+    //RJG - Make sure output directory exists
+    QDir saveDirectory(TheSimGlobal->filepath);
+    if(!saveDirectory.exists())
+        if(!saveDirectory.mkpath(TheSimGlobal->filepath))
+            QMessageBox::warning(mw,"Failed to make save directory!","Program failed to create the save directory. MBL2017 may not save files.");
 
     //do tweakers
     tweakers[0]=1;
