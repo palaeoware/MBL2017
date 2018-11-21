@@ -40,8 +40,8 @@ Lineage::Lineage(quint32 characters[], Lineage *parent, qint64 timestamp, quint3
     time_created=timestamp;
     time_died=-1;
     time_split=-1;
-    daughter_lineage_A=0;
-    daughter_lineage_B=0;
+    daughter_lineage_A=nullptr;
+    daughter_lineage_B=nullptr;
     genusnumber=0;
     parent_lineage=parent;
     simple_id=-1;
@@ -65,8 +65,8 @@ Lineage::~Lineage()
 {
     if (dontpropogatedelete) return; //switch to turn off deletion of children
     //Recursively delete all daughter lineages via their destructors;
-    if (daughter_lineage_A!=0) delete daughter_lineage_A;
-    if (daughter_lineage_B!=0) delete daughter_lineage_B;
+    if (daughter_lineage_A!=nullptr) delete daughter_lineage_A;
+    if (daughter_lineage_B!=nullptr) delete daughter_lineage_B;
 }
 
 /////////////////////////////////////////////////////
@@ -500,11 +500,11 @@ void Lineage::cull_dead_branches()
     //recurse through tree. Where we find a branch time but only a single branch - merge the two structures, deleting the upper one
     if (time_split!=-1) //do nothing if not a split
     {
-        if (daughter_lineage_A==0 && daughter_lineage_B==0)
+        if (daughter_lineage_A==nullptr && daughter_lineage_B==nullptr)
         {
             qDebug()<<"Internal error in cull_dead_branches. Oh dear.";
         }
-        if (daughter_lineage_A==0) //must mean B was not 0 - both 0 case was culled in strip_extinct
+        if (daughter_lineage_A==nullptr) //must mean B was not 0 - both 0 case was culled in strip_extinct
         {
             time_died=daughter_lineage_B->time_died;
             time_split=daughter_lineage_B->time_split;
@@ -520,7 +520,7 @@ void Lineage::cull_dead_branches()
             cull_dead_branches(); //do this again on me
             return;
         }
-        if (daughter_lineage_B==0) //must mean A was not 0 - both 0 case was culled in strip_extinct
+        if (daughter_lineage_B==nullptr) //must mean A was not 0 - both 0 case was culled in strip_extinct
         {
             time_died=daughter_lineage_A->time_died;
             time_split=daughter_lineage_A->time_split;
@@ -555,7 +555,7 @@ Lineage *Lineage::strip_extinct(Lineage *parent)
     }
     if (time_died!=-1) //extinct branch
     {
-        return (Lineage *)0; //return null pointer - this branch is not real
+        return (Lineage *)nullptr; //return null pointer - this branch is not real
     }
     if (time_split!=-1) //split node
     {
@@ -567,10 +567,10 @@ Lineage *Lineage::strip_extinct(Lineage *parent)
         l->daughter_lineage_A=daughter_lineage_A->strip_extinct(l);
         l->daughter_lineage_B=daughter_lineage_B->strip_extinct(l);
         //if both returned 0 - no extant descendants - we return 0 too
-        if (l->daughter_lineage_A==0 && l->daughter_lineage_B==0)
+        if (l->daughter_lineage_A==nullptr && l->daughter_lineage_B==nullptr)
         {
             delete l;
-            return (Lineage *)0;
+            return (Lineage *)nullptr;
         }
 //        if (l->daughter_lineage_A) l->daughter_lineage_A->parent_lineage=this;
 //        if (l->daughter_lineage_B) l->daughter_lineage_B->parent_lineage=this;
@@ -578,7 +578,7 @@ Lineage *Lineage::strip_extinct(Lineage *parent)
         return l;
     }
     qDebug()<<"Error in strip extinct - unhandled case";
-    return (Lineage *)0;
+    return (Lineage *)nullptr;
 
 }
 
@@ -590,7 +590,7 @@ Lineage *Lineage::strip_extinct(Lineage *parent)
 Lineage * Lineage::getsister()
 {
     //determine the sister clade to this clade - returns 0 if no sister clade (root)
-    if (parent_lineage==0) return 0;
+    if (parent_lineage==nullptr) return nullptr;
 
     //must be one of parents daughters - find which
     if (parent_lineage->daughter_lineage_A==this)
@@ -639,7 +639,7 @@ void Lineage::RDT_incorporate(Genus *g)
 
 Lineage * Lineage::find_clade_with_precise_size(int preciseleafcount)
 {
-    if (time_split==-1) return 0; //no daughters
+    if (time_split==-1) return nullptr; //no daughters
     int a=daughter_lineage_A->count_alive();
     if (a==preciseleafcount) return daughter_lineage_A;
     int b=daughter_lineage_A->count_alive();
@@ -647,16 +647,16 @@ Lineage * Lineage::find_clade_with_precise_size(int preciseleafcount)
     if (a>preciseleafcount)
     {
         Lineage *r=daughter_lineage_A->find_clade_with_precise_size(preciseleafcount);
-        if (r!=0) return r;
+        if (r!=nullptr) return r;
     }
     if (b>preciseleafcount)
     {
         Lineage *r=daughter_lineage_B->find_clade_with_precise_size(preciseleafcount);
-        if (r!=0) return r;
+        if (r!=nullptr) return r;
     }
 
     //if it gets here it's not found big enough daughter clades
-    return 0;
+    return nullptr;
 }
 
 
@@ -685,7 +685,7 @@ QString Lineage::dump()
     QTextStream out(&output);
     out<<"<br /><br />Lineage dump<br />";
     out<<"timstamp created: "<<time_created<<"<br />";
-    if (parent_lineage==0) out<<"No parent lineage - root species<br />";
+    if (parent_lineage==nullptr) out<<"No parent lineage - root species<br />";
     else
         out<<"Parent lineage pointer: "<<parent_lineage<<"\n";
 

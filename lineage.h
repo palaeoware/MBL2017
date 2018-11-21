@@ -9,7 +9,7 @@
 //#define CHARACTER_WORDS 4 //number of 32 bit words used for characters. Default 4 gives 128 characters
 //#define CHARACTER_WORDS 8 //256 characters
 //#define CHARACTER_WORDS 16 //512 characters
-#define CHARACTER_WORDS 32 //1024 characters
+#define CHARACTER_WORDS 64 //1024 characters
 //memory usage during a run is proportional to CHARACTER_WORDS
 
 class Lineage
