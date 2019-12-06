@@ -1,15 +1,16 @@
 # MBL2017
 ## Phylogenetic tree and matrix simulation based on birth–death systems
 
-This package is distributed for review purposes only. Not for redistribution until publication. 
-
 Coded by:
  - Mark Sutton (m.sutton@imperial.ac.uk)
+
+Additional coding:
+ - GUI theme designed by Alan R.T. Spencer.
+ - Tinkering, GUI implementation and release by Russell J. Garwood.
 
 Concepts and algorithms:
 - Mark Sutton
 - Julia Sigwart (j.sigwart@qub.ac.uk)
-
 
 <p align="center">
   <img width="250" height="250" src="./resources/palaeoware_logo_square.png">
@@ -20,7 +21,7 @@ ______
 ## Relevant references:
 Sigwart, J.D., Sutton, M.D. and Bennett, K.D., 2017. How big is a genus? Towards a nomothetic systematics. Zoological Journal of the Linnean Society.
 
-Keating, J.N., Sansom, R.S., Sutton, M.D., Knight, C.G. and Garwood, R.J. 2018. Comparing methods of morphological phylogenetic estimation using novel evolutionary simulations. 
+Keating, J.N., Sansom, R.S., Sutton, M.D., Knight, C.G. and Garwood, R.J. 2019. Comparing methods of morphological phylogenetic estimation using novel evolutionary simulations. 
 _____
 
 ## Contents:
