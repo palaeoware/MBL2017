@@ -30,6 +30,8 @@ _____
 1. Copyright and Licence
 2. Installation
 3. Usage
+4. Contributing to the code
+5. Bug reporting and feature requests
 
 ______
 
