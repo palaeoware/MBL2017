@@ -5,8 +5,8 @@ Coded by:
  - Mark Sutton (m.sutton@imperial.ac.uk)
 
 Additional coding:
- - GUI theme designed by Alan R.T. Spencer.
- - Tinkering, GUI implementation and release by Russell J. Garwood.
+ - GUI theme designed by Alan R.T. Spencer (alan.spencer@imperial.ac.uk).
+ - Tinkering, GUI implementation and release by Russell J. Garwood  (russell.garwood@gmail.com).
 
 Concepts and algorithms:
 - Mark Sutton
@@ -20,6 +20,7 @@ ______
 
 ## Relevant references:
 Sigwart, J.D., Sutton, M.D. and Bennett, K.D., 2017. How big is a genus? Towards a nomothetic systematics. Zoological Journal of the Linnean Society.
+
 Keating, J.N., Sansom, R.S., Sutton, M.D., Knight, Chris G., and Garwood, R.J. 2020. Morphological phylogenetics evaluated using novel evolutionary simulations. Systematic Biology.
 
 _____
@@ -103,6 +104,17 @@ Mutate chance. The chance of each binary character 'flipping' each time step. By
 
 _____
 
+## 4. Contributing to the code
+
+Contribution to the code in this repository is welcome. Please read the [Repository Contribution](https://github.com/palaeoware/repoconventions)  document for a guide to our coding style and repository structure before submitting any code updates.
+_____
+
+## 5. Bug reporting and feature requests
+
+Bug reporting and feature requests should be made through the [GitHub Issues](../../issues) page for this repository. We will aim to respond to all issues and feature requests in a timely manner.
+
 t:@palaeoware
+
+e:palaeoware@gmail.com
 
 w:https://github.com/palaeoware
