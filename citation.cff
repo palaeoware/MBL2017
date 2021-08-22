@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+authors:
+- family-names: "Sutton"
+  given-names: "Mark D."
+  orcid: "https://orcid.org/0000-0002-7137-7572"
+title: "MBL2017"
+version: 2.0.0
+doi: 10.5281/zenodo.3614075
+date-released: 2020-01-20
+url: "https://github.com/palaeoware/MBL2017/"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Keating"
+    given-names: "Joseph"
+    orcid: "https://orcid.org/0000-0002-2667-7795"
+  - family-names: "Sansom"
+    given-names: "Robert S."
+    orcid: "https://orcid.org/0000-0003-1926-2556"
+  - family-names: "Sutton"
+    given-names: "Mark D."
+    orcid: "https://orcid.org/0000-0002-7137-7572"
+  - family-names: "Knight"
+    given-names: "Christopher G."
+    orcid: "https://orcid.org/0000-0001-9815-4267"
+  - family-names: "Garwood"
+    given-names: "Russell J."
+    orcid: "https://orcid.org/0000-0002-2803-9471"
+  doi: "10.1093/sysbio/syaa012"
+  journal: "Systematic Biology"
+  month: 9
+  start: 897 # First page number
+  end: 912 #Last oage number
+  title: "Morphological Phylogenetics Evaluated Using Novel Evolutionary Simulations"
+  issue: 5
+  volume: 69
+  year: 2020
